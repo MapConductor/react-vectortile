@@ -6,8 +6,10 @@ display one — including the several that cannot read a vector style at all
 
 This package is a thin React component. The renderer itself is a Rust/wasm
 build from [MapConductor/vectortile](https://github.com/MapConductor/vectortile),
-shipped inside this package under `vendor/` (fetched from a pinned release by
-`scripts/fetch-vector-assets.mjs` when the package is built).
+shipped inside this package under `vendor/`. `npm run build` fetches it from the
+release pinned in `scripts/vector-assets.json` and checks its SHA-256. To use a
+local build instead, set `MAPCONDUCTOR_VECTORTILE_DIR` to a checkout of
+mapconductor-vectortile.
 
 ```tsx
 import { VectorTileLayer } from '@mapconductor/react-vectortile';
@@ -73,6 +75,21 @@ OpenStreetMap requires the credit, so this is not cosmetic.
 cannot fetch, and Mapbox `imports` — anything about the style that will not
 render as intended. The failure mode that matters is a blank tile, so it is
 worth surfacing.
+
+## Development
+
+This repository is a submodule of
+[react-sdk](https://github.com/MapConductor/react-sdk), which links it with
+`@mapconductor/js-sdk-core`, `@mapconductor/js-sdk-react` and
+`@mapconductor/js-vectorstyle` as npm workspaces. Build it from there:
+
+```sh
+# in react-sdk
+npm run build --workspace @mapconductor/react-vectortile
+```
+
+The public API is frozen in `api/react-vectortile.api.d.ts`; react-sdk's
+`node scripts/api-surface.mjs check` compares against it.
 
 ## License
 

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+# The renderer, fetched from a MapConductor/vectortile release by
+# scripts/fetch-vector-assets.mjs.
+vendor/
+*.tsbuildinfo
+.DS_Store

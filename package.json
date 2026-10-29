@@ -15,12 +15,13 @@
   "files": [
     "dist",
     "vendor",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
-    "prebuild": "node ../scripts/fetch-vector-assets.mjs",
+    "prebuild": "node scripts/fetch-vector-assets.mjs",
     "build": "tsup",
-    "predev": "node ../scripts/fetch-vector-assets.mjs",
+    "predev": "node scripts/fetch-vector-assets.mjs",
     "dev": "tsup --watch",
     "clean": "rm -rf dist",
     "test": "echo 'covered by the harness in mapconductor-vectortile'"
@@ -34,6 +35,10 @@
   ],
   "author": "MapConductor",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MapConductor/react-vectortile.git"
+  },
   "dependencies": {
     "@mapconductor/js-sdk-core": "^0.2.0",
     "@mapconductor/js-sdk-react": "^0.2.1",
