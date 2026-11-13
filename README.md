@@ -23,6 +23,12 @@ import { VectorTileLayer } from '@mapconductor/react-vectortile';
 </MapView>;
 ```
 
+## Demo
+
+[![A vector style rendered as raster tiles and recoloured](https://raw.githubusercontent.com/MapConductor/react-vectortile/main/docs/images/demo.jpg)](https://demo-react.mapconductor.com/maplibre/vector-tile/en)
+
+The [live demo](https://demo-react.mapconductor.com/maplibre/vector-tile/en) renders a vector style with `VectorTileLayer` and recolours it in place from the colour pickers. The provider can be switched at the top of the page, including ones that cannot read a vector style themselves.
+
 ## Props
 
 | prop | default | |
